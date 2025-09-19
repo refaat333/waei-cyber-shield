@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { ArrowLeft, Shield, Users, Zap } from "lucide-react";
 import heroImage from "@/assets/hero-cyber.jpg";
 
@@ -37,13 +38,17 @@ export const Hero = () => {
           
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button variant="hero" size="lg" className="min-w-48">
-              <ArrowLeft className="mr-2 h-5 w-5" />
-              ابدأ رحلتك الآن
-            </Button>
-            <Button variant="outline" size="lg" className="min-w-48">
-              استكشف المنصة
-            </Button>
+            <Link to="/courses">
+              <Button variant="hero" size="lg" className="min-w-48">
+                <ArrowLeft className="mr-2 h-5 w-5" />
+                ابدأ رحلتك الآن
+              </Button>
+            </Link>
+            <Link to="/awareness">
+              <Button variant="outline" size="lg" className="min-w-48">
+                استكشف المنصة
+              </Button>
+            </Link>
           </div>
           
           {/* Stats */}

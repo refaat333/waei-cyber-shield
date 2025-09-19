@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { 
   Eye, 
   Shield, 
@@ -20,7 +21,8 @@ export const Services = () => {
       subtitle: "مركز المعرفة",
       description: "آخر أخبار التهديدات، مقالات متخصصة، ومحتوى مرئي تفاعلي لبناء ثقافة أمنية شاملة",
       features: ["أخبار يومية", "مكتبة مقالات", "محتوى مرئي", "انفوجرافيك"],
-      gradient: "from-primary/20 to-accent/20"
+      gradient: "from-primary/20 to-accent/20",
+      href: "/awareness"
     },
     {
       icon: toolsIcon,
@@ -28,7 +30,8 @@ export const Services = () => {
       subtitle: "ترسانة الدفاع الرقمي",
       description: "مجموعة شاملة من الأدوات المتقدمة لفحص التهديدات وحماية البيانات الشخصية",
       features: ["فاحص الروابط", "مدقق كلمات المرور", "تقرير الظل الرقمي", "مختبر أدوات"],
-      gradient: "from-secondary/20 to-primary/20"
+      gradient: "from-secondary/20 to-primary/20",
+      href: "/protection"
     },
     {
       icon: coursesIcon,
@@ -36,7 +39,8 @@ export const Services = () => {
       subtitle: "الأكاديمية",
       description: "مسارات تعليمية معتمدة ومختبرات عملية لتأهيل المحترفين في مجال الأمن السيبراني",
       features: ["مسارات مهنية", "شهادات معتمدة", "مختبرات تفاعلية", "ترميز آمن"],
-      gradient: "from-accent/20 to-secondary/20"
+      gradient: "from-accent/20 to-secondary/20",
+      href: "/courses"
     },
     {
       icon: MessageCircle,
@@ -44,7 +48,8 @@ export const Services = () => {
       subtitle: "مركز الخبراء",
       description: "استشارات مخصصة وإرشاد مهني من خبراء معتمدين في الأمن السيبراني",
       features: ["مستشار ذكي", "اسأل خبير", "إرشاد مهني", "استشارات مؤسسية"],
-      gradient: "from-primary/20 to-secondary/20"
+      gradient: "from-primary/20 to-secondary/20",
+      href: "/consulting"
     },
     {
       icon: Trophy,
@@ -52,7 +57,8 @@ export const Services = () => {
       subtitle: "الساحة التفاعلية",
       description: "تحديات عملية وبيئات محاكاة لاختبار المهارات وتطبيق المعرفة",
       features: ["تحديات CTF", "الميدان السيبراني", "لوحات صدارة", "محاكاة هجمات"],
-      gradient: "from-secondary/20 to-accent/20"
+      gradient: "from-secondary/20 to-accent/20",
+      href: "/challenges"
     },
     {
       icon: Eye,
@@ -60,7 +66,8 @@ export const Services = () => {
       subtitle: "مركز العمليات",
       description: "مراقبة مستمرة للتهديدات وتحليل الاتجاهات الأمنية العالمية والمحلية",
       features: ["رصد التهديدات", "تحليل البيانات", "تقارير أمنية", "إنذار مبكر"],
-      gradient: "from-accent/20 to-primary/20"
+      gradient: "from-accent/20 to-primary/20",
+      href: "/monitoring"
     }
   ];
 
@@ -113,10 +120,12 @@ export const Services = () => {
               </div>
 
               {/* Action */}
-              <Button variant="outline" className="w-full group-hover:border-primary transition-smooth">
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                استكشف القسم
-              </Button>
+              <Link to={service.href}>
+                <Button variant="outline" className="w-full group-hover:border-primary transition-smooth">
+                  <ArrowLeft className="mr-2 h-4 w-4" />
+                  استكشف القسم
+                </Button>
+              </Link>
             </Card>
           ))}
         </div>

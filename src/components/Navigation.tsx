@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { 
   Home, 
   BookOpen, 
@@ -37,14 +38,15 @@ export const Navigation = () => {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-6 space-x-reverse">
             {navItems.map((item) => (
-              <Button
-                key={item.label}
-                variant="ghost"
-                className="flex items-center space-x-2 space-x-reverse hover:text-primary transition-smooth"
-              >
-                <item.icon className="h-4 w-4" />
-                <span>{item.label}</span>
-              </Button>
+              <Link key={item.label} to={item.href}>
+                <Button
+                  variant="ghost"
+                  className="flex items-center space-x-2 space-x-reverse hover:text-primary transition-smooth"
+                >
+                  <item.icon className="h-4 w-4" />
+                  <span>{item.label}</span>
+                </Button>
+              </Link>
             ))}
           </div>
 
@@ -74,14 +76,15 @@ export const Navigation = () => {
           <div className="lg:hidden mt-4 pt-4 border-t border-border">
             <div className="grid grid-cols-2 gap-2">
               {navItems.map((item) => (
-                <Button
-                  key={item.label}
-                  variant="ghost"
-                  className="flex items-center justify-start space-x-2 space-x-reverse p-3"
-                >
-                  <item.icon className="h-4 w-4" />
-                  <span className="text-sm">{item.label}</span>
-                </Button>
+                <Link key={item.label} to={item.href} onClick={() => setIsOpen(false)}>
+                  <Button
+                    variant="ghost"
+                    className="flex items-center justify-start space-x-2 space-x-reverse p-3 w-full"
+                  >
+                    <item.icon className="h-4 w-4" />
+                    <span className="text-sm">{item.label}</span>
+                  </Button>
+                </Link>
               ))}
             </div>
           </div>
