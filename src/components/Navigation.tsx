@@ -52,12 +52,16 @@ export const Navigation = () => {
 
           {/* Actions */}
           <div className="flex items-center space-x-4 space-x-reverse">
-            <Button variant="outline" size="sm" className="hidden sm:inline-flex">
-              تسجيل الدخول
-            </Button>
-            <Button variant="hero" size="sm">
-              اشترك الآن
-            </Button>
+            <Link to="/login">
+              <Button variant="outline" size="sm" className="hidden sm:inline-flex">
+                تسجيل الدخول
+              </Button>
+            </Link>
+            <Link to="/register">
+              <Button variant="hero" size="sm">
+                اشترك الآن
+              </Button>
+            </Link>
             
             {/* Mobile menu button */}
             <Button
