@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { Link } from "react-router-dom";
 import { 
   Shield, 
   Twitter, 
@@ -33,7 +34,7 @@ export const Footer = () => {
     {
       title: "الشركة",
       links: [
-        { label: "من نحن", href: "/about" },
+        { label: "من نحن", href: "/about-us" },
         { label: "فريق العمل", href: "/team" },
         { label: "الشراكات", href: "/partnerships" },
         { label: "الوظائف", href: "/careers" }
@@ -85,12 +86,14 @@ export const Footer = () => {
               <ul className="space-y-3">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
-                    <Button 
-                      variant="ghost" 
-                      className="p-0 h-auto text-muted-foreground hover:text-primary transition-smooth justify-start"
-                    >
-                      {link.label}
-                    </Button>
+                    <Link to={link.href}>
+                      <Button 
+                        variant="ghost" 
+                        className="p-0 h-auto text-muted-foreground hover:text-primary transition-smooth justify-start"
+                      >
+                        {link.label}
+                      </Button>
+                    </Link>
                   </li>
                 ))}
               </ul>

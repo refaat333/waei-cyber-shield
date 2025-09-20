@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 import { 
   AlertTriangle, 
   Shield, 
@@ -64,10 +65,12 @@ export const Dashboard = () => {
             <Card className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-xl font-bold text-foreground">التحديثات الأمنية</h3>
-                <Button variant="ghost" size="sm">
-                  عرض الكل
-                  <ArrowLeft className="mr-2 h-4 w-4" />
-                </Button>
+                <Link to="/analytics">
+                  <Button variant="ghost" size="sm">
+                    عرض الكل
+                    <ArrowLeft className="mr-2 h-4 w-4" />
+                  </Button>
+                </Link>
               </div>
               
               <div className="space-y-4">
@@ -107,22 +110,30 @@ export const Dashboard = () => {
             <Card className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
               <h3 className="text-xl font-bold text-foreground mb-4">إجراءات سريعة</h3>
               <div className="space-y-3">
-                <Button variant="outline" className="w-full justify-start">
-                  <Shield className="mr-2 h-4 w-4" />
-                  فحص الروابط
-                </Button>
-                <Button variant="outline" className="w-full justify-start">
-                  <CheckCircle className="mr-2 h-4 w-4" />
-                  تدقيق كلمة المرور
-                </Button>
-                <Button variant="outline" className="w-full justify-start">
-                  <AlertTriangle className="mr-2 h-4 w-4" />
-                  فحص التسريبات
-                </Button>
-                <Button variant="hero" className="w-full">
-                  <ArrowLeft className="mr-2 h-4 w-4" />
-                  جميع الأدوات
-                </Button>
+                <Link to="/protection">
+                  <Button variant="outline" className="w-full justify-start">
+                    <Shield className="mr-2 h-4 w-4" />
+                    فحص الروابط
+                  </Button>
+                </Link>
+                <Link to="/protection">
+                  <Button variant="outline" className="w-full justify-start">
+                    <CheckCircle className="mr-2 h-4 w-4" />
+                    تدقيق كلمة المرور
+                  </Button>
+                </Link>
+                <Link to="/protection">
+                  <Button variant="outline" className="w-full justify-start">
+                    <AlertTriangle className="mr-2 h-4 w-4" />
+                    فحص التسريبات
+                  </Button>
+                </Link>
+                <Link to="/tools">
+                  <Button variant="hero" className="w-full">
+                    <ArrowLeft className="mr-2 h-4 w-4" />
+                    جميع الأدوات
+                  </Button>
+                </Link>
               </div>
             </Card>
 
