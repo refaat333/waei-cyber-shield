@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { BookOpen, AlertTriangle, TrendingUp, Users, ArrowLeft } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Awareness = () => {
   const newsItems = [
@@ -89,10 +90,12 @@ const Awareness = () => {
                 <CardContent>
                   <div className="flex justify-between items-center">
                     <Badge variant="outline">{item.category}</Badge>
-                    <Button variant="ghost" size="sm">
-                      اقرأ المزيد
-                      <ArrowLeft className="ml-2 h-4 w-4" />
-                    </Button>
+                    <Link to="/articles">
+                      <Button variant="ghost" size="sm">
+                        اقرأ المزيد
+                        <ArrowLeft className="ml-2 h-4 w-4" />
+                      </Button>
+                    </Link>
                   </div>
                 </CardContent>
               </Card>
@@ -125,10 +128,12 @@ const Awareness = () => {
                       <Badge variant="outline">{article.level}</Badge>
                       <Badge variant="secondary">{article.readTime}</Badge>
                     </div>
-                    <Button variant="ghost" size="sm">
-                      قراءة
-                      <ArrowLeft className="ml-2 h-4 w-4" />
-                    </Button>
+                    <Link to="/articles">
+                      <Button variant="ghost" size="sm">
+                        قراءة
+                        <ArrowLeft className="ml-2 h-4 w-4" />
+                      </Button>
+                    </Link>
                   </div>
                 </CardContent>
               </Card>

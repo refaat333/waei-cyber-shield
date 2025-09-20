@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Trophy, Flag, Users, Clock, Star, Play, Lock } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Challenges = () => {
   const categories = [
@@ -108,14 +109,18 @@ const Challenges = () => {
               اختبر مهاراتك وتنافس مع المحترفين في تحديات الأمن السيبراني
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button variant="hero" size="lg">
-                <Play className="mr-2 h-4 w-4" />
-                ابدأ التحدي
-              </Button>
-              <Button variant="outline" size="lg">
-                <Trophy className="mr-2 h-4 w-4" />
-                لوحة الصدارة
-              </Button>
+              <Link to="/challenges/practice">
+                <Button variant="hero" size="lg">
+                  <Play className="mr-2 h-4 w-4" />
+                  ابدأ التحدي
+                </Button>
+              </Link>
+              <Link to="/challenges/leaderboard">
+                <Button variant="outline" size="lg">
+                  <Trophy className="mr-2 h-4 w-4" />
+                  لوحة الصدارة
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -193,13 +198,17 @@ const Challenges = () => {
                     </div>
                   </div>
                   
-                  <Button 
-                    className="w-full" 
-                    variant={challenge.status === "متاح" ? "hero" : "outline"}
-                    disabled={challenge.status === "مغلق"}
-                  >
-                    {challenge.status === "متاح" ? "ابدأ التحدي" : "مغلق"}
-                  </Button>
+                  {challenge.status === "متاح" ? (
+                    <Link to="/challenges/practice">
+                      <Button className="w-full" variant="hero">
+                        ابدأ التحدي
+                      </Button>
+                    </Link>
+                  ) : (
+                    <Button className="w-full" variant="outline" disabled>
+                      مغلق
+                    </Button>
+                  )}
                 </CardContent>
               </Card>
             ))}
@@ -269,10 +278,12 @@ const Challenges = () => {
                           <div className="font-semibold">{event.participants}</div>
                         </div>
                       </div>
-                      <Button className="w-full" variant="outline">
-                        <Star className="mr-2 h-4 w-4" />
-                        سجل اهتمامك
-                      </Button>
+                      <Link to="/register">
+                        <Button className="w-full" variant="outline">
+                          <Star className="mr-2 h-4 w-4" />
+                          سجل اهتمامك
+                        </Button>
+                      </Link>
                     </CardContent>
                   </Card>
                 ))}

@@ -21,6 +21,11 @@ import Profile from "./pages/Profile";
 import Pricing from "./pages/Pricing";
 import Users from "./pages/Users";
 import Analytics from "./pages/Analytics";
+import LinkChecker from "./pages/tools/LinkChecker";
+import PasswordChecker from "./pages/tools/PasswordChecker";
+import DigitalFootprint from "./pages/tools/DigitalFootprint";
+import Practice from "./pages/challenges/Practice";
+import Leaderboard from "./pages/challenges/Leaderboard";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -50,6 +55,11 @@ const App = () => (
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/users" element={<Users />} />
           <Route path="/analytics" element={<Analytics />} />
+          <Route path="/tools/link-checker" element={<LinkChecker />} />
+          <Route path="/tools/password-checker" element={<PasswordChecker />} />
+          <Route path="/tools/digital-footprint" element={<DigitalFootprint />} />
+          <Route path="/challenges/practice" element={<Practice />} />
+          <Route path="/challenges/leaderboard" element={<Leaderboard />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

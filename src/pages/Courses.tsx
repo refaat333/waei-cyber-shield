@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { GraduationCap, Clock, Users, Star, Play, CheckCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Courses = () => {
   const featuredPaths = [
@@ -154,10 +155,12 @@ const Courses = () => {
                     </div>
                   )}
                   
-                  <Button className="w-full" variant="hero">
-                    <Play className="mr-2 h-4 w-4" />
-                    ابدأ المسار
-                  </Button>
+                  <Link to="/courses/path-details">
+                    <Button className="w-full" variant="hero">
+                      <Play className="mr-2 h-4 w-4" />
+                      ابدأ المسار
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
@@ -199,9 +202,11 @@ const Courses = () => {
                   
                   <div className="flex justify-between items-center">
                     <span className="text-lg font-bold text-primary">{course.price}</span>
-                    <Button variant="outline" size="sm">
-                      التفاصيل
-                    </Button>
+                    <Link to="/courses/course-details">
+                      <Button variant="outline" size="sm">
+                        التفاصيل
+                      </Button>
+                    </Link>
                   </div>
                 </CardContent>
               </Card>
@@ -235,9 +240,11 @@ const Courses = () => {
                 </div>
               </div>
               
-              <Button variant="hero" size="lg" className="mt-8">
-                اكتشف المختبر
-              </Button>
+              <Link to="/tools/lab">
+                <Button variant="hero" size="lg" className="mt-8">
+                  اكتشف المختبر
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

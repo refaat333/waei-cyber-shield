@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Shield, Lock, Search, AlertTriangle, CheckCircle, Eye } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Protection = () => {
   const [urlToCheck, setUrlToCheck] = useState("");
@@ -105,9 +106,11 @@ const Protection = () => {
                   value={urlToCheck}
                   onChange={(e) => setUrlToCheck(e.target.value)}
                 />
-                <Button className="w-full" variant="hero">
-                  فحص الرابط
-                </Button>
+                <Link to="/tools/link-checker">
+                  <Button className="w-full" variant="hero">
+                    فحص الرابط
+                  </Button>
+                </Link>
                 <div className="text-xs text-muted-foreground">
                   نحلل الرابط للتحقق من وجود تهديدات محتملة
                 </div>
@@ -129,9 +132,11 @@ const Protection = () => {
                   value={emailToCheck}
                   onChange={(e) => setEmailToCheck(e.target.value)}
                 />
-                <Button className="w-full" variant="hero">
-                  فحص التسريبات
-                </Button>
+                <Link to="/tools/digital-footprint">
+                  <Button className="w-full" variant="hero">
+                    فحص التسريبات
+                  </Button>
+                </Link>
                 <div className="text-xs text-muted-foreground">
                   نبحث في قواعد بيانات التسريبات المعروفة
                 </div>
@@ -153,9 +158,11 @@ const Protection = () => {
                   value={passwordToCheck}
                   onChange={(e) => setPasswordToCheck(e.target.value)}
                 />
-                <Button className="w-full" variant="hero">
-                  فحص القوة
-                </Button>
+                <Link to="/tools/password-checker">
+                  <Button className="w-full" variant="hero">
+                    فحص القوة
+                  </Button>
+                </Link>
                 <div className="text-xs text-muted-foreground">
                   تقييم محلي آمن لقوة كلمة المرور
                 </div>
